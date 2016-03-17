@@ -3,6 +3,19 @@
 <head>
 <title>Page Title</title>
 </head>
+<style>
+
+textarea {
+    width: 100%;
+    height: 200px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 3px;
+    padding: 20px 30px;
+}
+</style>
+
 <body>
 
 <h1>Stupid Break Calculator</h1>
@@ -14,9 +27,10 @@
   <input id="clockin" type="time">
   <br>
   <br>
-  <button onclick="damnit()">submit</button>
-
-  <h1 id='break_interval'></h1>
+  <button onclick="damnit();">submit</button>  <button onclick="clearfields();">clear</button>
+  <br>
+  <br>
+  <textarea id='break_interval'></textarea>
 
 
 </body>
@@ -42,8 +56,15 @@
     console.log(diff.toFixed(2));
 
     var break_interval =  document.getElementById("break_interval");
-    break_interval.innerHTML = "Your break was " + diff.toFixed(2) + " Hours";
+    var last_interval = document.getElementById("break_interval").innerHTML;
+    break_interval.innerHTML = last_interval + "Your break from "+ clockout + " to " + clockin + " was " + diff.toFixed(2) + " Hours \n";
 
-  }
+  };
+
+  function clearfields() {
+    var last_interval = document.getElementById("break_interval").innerHTML;
+    break_interval.innerHTML = "";
+
+  };
 </script>
 </html>
