@@ -56,14 +56,14 @@ textarea {
     console.log(diff.toFixed(2));
 
     var break_interval =  document.getElementById("break_interval");
-    var last_interval = document.getElementById("break_interval").innerHTML;
-    break_interval.innerHTML = last_interval + "Your break from "+ clockout + " to " + clockin + " was " + diff.toFixed(2) + " Hours \n";
+    var last_interval = document.getElementById("break_interval").value;
+    break_interval.value = last_interval + "Your break from "+ clockout + " to " + clockin + " was " + diff.toFixed(2) + " Hours \n";
 
   };
 
   function clearfields() {
     var last_interval = document.getElementById("break_interval").innerHTML;
-    break_interval.innerHTML = "";
+    break_interval.value = "";
 
   };
 </script>
